@@ -226,7 +226,8 @@ ul {
 }
 
 .card-background {
-  flex-basis: calc((100% - 3 * 24px) / 4);
+  margin: 0 auto;
+  flex-basis: 100%;
   background-color: #fff;
   border-radius: 0 0 4px 4px;
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
@@ -291,7 +292,6 @@ ul {
 
 .advantages-section {
   padding: 96px 16px;
-  /* padding: 120px 0; */
 }
 
 .visually-hidden {
@@ -323,14 +323,16 @@ ul {
 }
 
 .advantages-section-list-item-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 112px;
-  background-color: #f4f4fd;
-  border: 1px solid #8e8f99;
-  border-radius: 4px;
-  margin-bottom: 8px;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .team-section {
@@ -344,7 +346,9 @@ ul {
 
 .team-section-list {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 72px;
 }
 
 .portfolio-section {
@@ -755,6 +759,16 @@ ul {
   .advantages-section-list-item {
     flex-basis: calc((100% - 24px) / 2);
   }
+
+  .team-section-list {
+    flex-direction: row;
+    row-gap: 64px;
+    column-gap: 24px;
+  }
+
+  .card-background {
+    flex-basis: calc((100% - 24px) / 2);
+  }
 }
 @media (min-width: 1158px) {
   .card-header {
@@ -762,13 +776,46 @@ ul {
     font-size: 20px;
     line-height: 1.2;
   }
+
   .advantages-section {
     padding: 120px 0;
   }
+
   .advantages-section-list {
     gap: 24px;
   }
+
   .advantages-section-list-item {
     flex-basis: calc((100% - 3 * 24px) / 4);
+  }
+
+  .advantages-section-list-item-image-container {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    white-space: normal;
+    clip-path: none;
+    clip: auto;
+    overflow: visible;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 112px;
+    background-color: #f4f4fd;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+
+  .card-background {
+    flex-basis: calc((100% - 3 * 24px) / 4);
+  }
+
+  .team-section-list {
+    flex-wrap: nowrap;
+    gap: 24px;
   }
 }
