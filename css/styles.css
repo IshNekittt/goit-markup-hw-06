@@ -65,11 +65,11 @@ ul {
 }
 
 .header-nav-panel .logo {
-  margin-right: 76px;
+  margin-right: 120px;
 }
 
 .navigation-list {
-  display: flex;
+  display: none;
   gap: 40px;
   height: 100%;
 }
@@ -111,12 +111,14 @@ ul {
 
 .address {
   font-style: normal;
+  display: none;
 }
 
 .address-list {
   display: flex;
-  align-items: center;
-  gap: 40px;
+  flex-direction: column;
+  align-items: left;
+  gap: 12px;
 }
 
 .address-list-item {
@@ -230,19 +232,6 @@ ul {
   color: #434455;
 }
 
-.team-section .card-description {
-  text-align: center;
-}
-
-.card-background {
-  margin: 0 auto;
-  flex-basis: content;
-  background-color: #fff;
-  border-radius: 0 0 4px 4px;
-  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
-    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
-}
-
 .social-media-list {
   display: flex;
   gap: 24px;
@@ -295,10 +284,6 @@ ul {
   display: flex;
 }
 
-.container address li:not(:last-child) {
-  margin-right: 40px;
-}
-
 .advantages-section {
   padding: 96px 0;
 }
@@ -332,16 +317,7 @@ ul {
 }
 
 .advantages-section-list-item-image-container {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+  display: none;
 }
 
 .team-section {
@@ -353,11 +329,24 @@ ul {
   margin-bottom: 72px;
 }
 
+.team-section .card-description {
+  text-align: center;
+}
+
 .team-section-list {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 72px;
+  row-gap: 72px;
+}
+
+.team-section-list-item {
+  margin: 0 auto;
+  flex-basis: content;
+  background-color: #fff;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-section {
@@ -370,6 +359,7 @@ ul {
 
 .portfolio-section-list {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   row-gap: 48px;
 }
@@ -765,6 +755,13 @@ ul {
 }
 
 @media (min-width: 768px) {
+  .address {
+    display: block;
+  }
+  .navigation-list {
+    display: flex;
+  }
+
   .advantages-section .card-header {
     text-align: start;
   }
@@ -788,14 +785,14 @@ ul {
   }
 
   .portfolio-section-list {
+    flex-direction: row;
     column-gap: 24px;
   }
 
   .footer-section .container {
-    padding-left: 108px;
     flex-direction: row;
     align-items: baseline;
-    justify-content: left;
+    justify-content: center;
     align-self: center;
     column-gap: 24px;
     row-gap: 72px;
@@ -808,6 +805,10 @@ ul {
 
   .footer-section-links-header {
     text-align: left;
+  }
+
+  .footer-section-subscribe-container {
+    margin-left: -48px;
   }
 
   .subscribe-paragraph {
@@ -825,6 +826,20 @@ ul {
 }
 
 @media (min-width: 1158px) {
+  .header-nav-panel .logo {
+    margin-right: 76px;
+  }
+
+  .container address li:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  .address-list {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+
   .advantages-section .card-header {
     font-weight: 500;
     font-size: 20px;
@@ -844,16 +859,6 @@ ul {
   }
 
   .advantages-section-list-item-image-container {
-    position: static;
-    width: auto;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    white-space: normal;
-    clip-path: none;
-    clip: auto;
-    overflow: visible;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -864,10 +869,6 @@ ul {
     margin-bottom: 8px;
   }
 
-  .card-background {
-    flex-basis: calc((100% - 3 * 24px) / 4);
-  }
-
   .team-section {
     padding: 120px 0;
   }
@@ -876,6 +877,10 @@ ul {
     flex-wrap: nowrap;
     width: auto;
     gap: 24px;
+  }
+
+  .team-section-list-item {
+    flex-basis: calc((100% - 3 * 24px) / 4);
   }
 
   .portfolio-section {
@@ -907,6 +912,10 @@ ul {
 
   .footer-section {
     flex-wrap: nowrap;
+  }
+
+  .footer-section-subscribe-container {
+    margin: 0;
   }
 
   .subscribe-form {
