@@ -62,6 +62,8 @@ ul {
 .header-nav-panel {
   align-items: center;
   height: 100%;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .header-nav-panel .logo {
@@ -133,6 +135,13 @@ ul {
 .address-list-item:hover,
 .address-list-item:focus {
   color: #404bbf;
+}
+
+.header-nav-panel-svg-container {
+  height: 24px;
+  width: 24px;
+  margin: 20px 0;
+  cursor: pointer;
 }
 
 .solutions-section {
@@ -460,7 +469,9 @@ ul {
 }
 
 .footer-section .social-media-list-item-link:hover,
-.footer-section .social-media-list-item-link:focus {
+.footer-section .social-media-list-item-link:focus,
+.phone-modal .social-media-list-item-link:hover,
+.phone-modal .social-media-list-item-link:focus {
   background-color: #31d0aa;
 }
 
@@ -548,7 +559,6 @@ ul {
   z-index: 999;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
   opacity: 0;
   pointer-events: none;
 }
@@ -575,6 +585,15 @@ ul {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.phone-modal {
+  width: 100%;
+  height: 100%;
+  padding: 72px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .modal-close-button {
   padding: 0;
   position: absolute;
@@ -593,6 +612,10 @@ ul {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.phone-modal-close-button {
+  background-color: #fcfcfc;
+}
+
 .modal-close-button-icon {
   fill: #2e2f42;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -606,6 +629,11 @@ ul {
 .modal-close-button:hover .modal-close-button-icon,
 .modal-close-button:focus .modal-close-button-icon {
   fill: #fff;
+}
+
+.phone-modal-close-button:hover,
+.phone-modal-close-button:focus {
+  background-color: #e7e9fc;
 }
 
 .modal-header {
@@ -754,7 +782,68 @@ ul {
   background-color: #404bbf;
 }
 
+.modal-card-header {
+  display: block;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+}
+
+.phone-navigation-list li:not(:last-child) .modal-card-header {
+  margin-bottom: 40px;
+}
+
+.phone-navigation-list li:nth-child(1) .modal-card-header {
+  color: #404bbf;
+}
+
+.phone-modal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.phone-modal-address {
+  font-style: normal;
+}
+
+.phone-address-list {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 24px;
+}
+
+.phone-address-list-item {
+  color: #404bbf;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.phone-address-list li:first-child .phone-address-list-item {
+  color: #404bbf;
+}
+
+.phone-modal-contacts .social-media-list {
+  justify-content: left;
+  margin-top: 0;
+}
+
 @media (min-width: 768px) {
+  .header-nav-panel {
+    width: fit-content;
+    justify-content: center;
+  }
+
+  .header-nav-panel-svg-container {
+    display: none;
+  }
   .address {
     display: block;
   }
