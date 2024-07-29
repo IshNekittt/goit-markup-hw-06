@@ -52,8 +52,6 @@ ul {
   align-items: center;
   flex-basis: 100%;
   justify-content: space-between;
-  max-width: 320px;
-  padding: 0 16px;
 }
 
 .header-section .logo-accent {
@@ -275,9 +273,9 @@ ul {
 }
 
 .container {
-  max-width: 1158px;
-  padding: 0 15px;
   margin: 0 auto;
+  padding: 0 16px;
+  max-width: 320px;
 }
 
 .container ul li {
@@ -840,9 +838,8 @@ ul {
 }
 
 @media (min-width: 768px) {
-  .header-section .container {
+  .container {
     max-width: 768px;
-    margin: 0 auto;
   }
 
   .header-nav-panel {
@@ -891,20 +888,14 @@ ul {
     flex-direction: row;
     row-gap: 64px;
     column-gap: 24px;
-  }
-
-  .team-section-list-item {
-    flex-basis: calc((100% - 24px) / 2);
+    justify-content: center;
   }
 
   .portfolio-section-list {
     flex-direction: row;
     column-gap: 24px;
     margin: 0 auto;
-  }
-
-  .portfolio-section-list-item {
-    flex-basis: calc((100% - 24px) / 2);
+    justify-content: center;
   }
 
   .footer-section .container {
@@ -914,7 +905,6 @@ ul {
     align-self: center;
     column-gap: 24px;
     row-gap: 72px;
-    max-width: 768px;
   }
 
   .footer-section-info-container {
@@ -953,8 +943,9 @@ ul {
 }
 
 @media (min-width: 1158px) {
-  .header-section .container {
+  .container {
     max-width: 1158px;
+    padding: 0 15px;
   }
 
   .header-nav-panel .logo {
@@ -1054,7 +1045,6 @@ ul {
   .footer-section .container {
     gap: 0;
     flex-wrap: nowrap;
-    max-width: 1158px;
     padding-left: 15px;
   }
 
