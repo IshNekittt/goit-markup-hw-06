@@ -898,6 +898,10 @@ ul {
     justify-content: center;
   }
 
+  .portfolio-section-list-item {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+
   .footer-section .container {
     flex-direction: row;
     align-items: baseline;
