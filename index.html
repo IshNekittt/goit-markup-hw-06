@@ -27,7 +27,7 @@
                     <li><a href="" class="navigation-list-item">Portfolio</a></li>
                     <li><a href="" class="navigation-list-item">Contacts</a></li>
                 </ul>
-                <div class="header-nav-panel-svg-container">
+                <div class="header-nav-panel-svg-container" data-phone-modal-open>
                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                         <use href="./images/icons.svg#icon-menu"></use>
                     </svg>
@@ -45,7 +45,7 @@
         <section class="solutions-section">
             <div class="container">
                 <h1 class="solutions-section-header">Effective Solutions for Your Business</h1>
-                <button type="button" class="solutions-section-button">Order Service</button>
+                <button type="button" class="solutions-section-button" data-modal-open>Order Service</button>
             </div>
         </section>
         <section class="advantages-section">
@@ -432,10 +432,10 @@
             </div>
         </div>
     </footer>
-    <div class="modal-overlay">
+    <div class="modal-overlay" data-modal>
         <div class="modal">
-            <button type="button" class="modal-close-button"><svg width="8" height="8" class="modal-close-button-icon"
-                    xmlns="http://www.w3.org/2000/svg">
+            <button type="button" class="modal-close-button" data-modal-close><svg width="8" height="8"
+                    class="modal-close-button-icon" xmlns="http://www.w3.org/2000/svg">
                     <use href="./images/icons.svg#icon-close"></use>
                 </svg></button>
             <p class="modal-header">Leave your contacts and we will call you back</p>
@@ -491,10 +491,11 @@
             </form>
         </div>
     </div>
-    <div class="modal-overlay phone-modal-overlay">
+    <div class="modal-overlay phone-modal-overlay" data-phone-modal>
         <div class="modal phone-modal">
-            <button type="button" class="modal-close-button phone-modal-close-button"><svg width="8" height="8"
-                    class="modal-close-button-icon phone-modal-close-button-icon" xmlns="http://www.w3.org/2000/svg">
+            <button type="button" class="modal-close-button phone-modal-close-button" data-phone-modal-close><svg
+                    width="8" height="8" class="modal-close-button-icon phone-modal-close-button-icon"
+                    xmlns="http://www.w3.org/2000/svg">
                     <use href="./images/icons.svg#icon-close"></use>
                 </svg></button>
             <div class="phone-navigation-container">
@@ -551,6 +552,7 @@
             </div>
         </div>
     </div>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
